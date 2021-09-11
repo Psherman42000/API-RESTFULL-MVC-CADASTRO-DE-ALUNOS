@@ -1,11 +1,14 @@
 const express = require("express");
-const aluno = require("../models/Aluno");
+const criarAluno = require("../models/Aluno");
 const executa = require("../controllers/index");
+
+var aluno;
 
 const router = express.Router();
 
-router.post('/registra', (req, res) => {
+router.post('/registrar', (req, res) => {
     try{
+        aluno = criarAluno();
         aluno.nome = req.body.nome;
         aluno.matricula = req.body.matricula;
         aluno.turma = req.body.turma;
@@ -18,6 +21,21 @@ router.post('/registra', (req, res) => {
         return res.send({message: "Aluno Registrado!"});
 
     return res.status(500).send({error: "Erro ao registrar Aluno"});
+});
+
+router.delete('/remover', (req, res) => {
+    try{
+        aluno = criarAluno();
+        aluno.matricula = req.body.matricula;
+    }catch(err){
+        console.log(err);
+        return res.status(400).send({error: "Solicitacao Invalida"});
+    }
+
+    if(executa.remover(aluno.matricula))
+        return res.send({message: "Aluno Excluido!"});
+
+    return res.status(500).send({error: "Erro ao Remover Aluno"});
 });
 
 module.exports = router;

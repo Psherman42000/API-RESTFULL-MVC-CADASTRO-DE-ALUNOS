@@ -1,7 +1,11 @@
-let aluno = {
-    nome: null,
-    matricula: null,
-    turma: null
+function criarAluno (){
+    aluno = {
+        nome: null,
+        matricula: null,
+        turma: null
+    }
+
+    return aluno;
 }
 
-module.exports = aluno;
+module.exports = criarAluno;

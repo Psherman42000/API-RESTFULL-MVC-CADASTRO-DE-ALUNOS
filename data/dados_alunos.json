@@ -1,12 +1,14 @@
-[
-    {
-        "nome": "pedro",
-        "matricula": "0002",
-        "turma": "3° A"
-    },
-    {
-        "nome": "pedro",
-        "matricula": "0002",
-        "turma": "3° A"
-    }
-]
+{
+    "alunos": [
+        {
+            "nome": "joao",
+            "matricula": "0001",
+            "turma": "2° d"
+        },
+        {
+            "nome": "joao",
+            "matricula": "0003",
+            "turma": "2° d"
+        }
+    ]
+}

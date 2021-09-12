@@ -38,4 +38,8 @@ router.delete('/remover', (req, res) => {
     return res.status(500).send({error: "Erro ao Remover Aluno"});
 });
 
+router.get('/', (req, res) => {
+    res.send(executa.getAll());
+});
+
 module.exports = router;

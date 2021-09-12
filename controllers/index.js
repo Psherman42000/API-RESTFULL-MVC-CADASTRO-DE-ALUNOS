@@ -15,7 +15,7 @@ function registro(aluno){
 };
 
 function remover(matricula){
-    dadosAlunos = requireDadosAlunos();
+    const dadosAlunos = requireDadosAlunos();
     dadosAlunos.alunos = dadosAlunos.alunos.filter(item => String(item.matricula) !== String(matricula));
     fs.writeFile(path.join(__dirname, '../data/dados_alunos.json'), JSON.stringify(dadosAlunos, null, 4), err => {
         if(err) throw err;
@@ -23,4 +23,9 @@ function remover(matricula){
     return true;
 }
 
-module.exports = {registro, remover};
+function getAll(){
+    const dadosAlunos = requireDadosAlunos();
+    return dadosAlunos;
+}
+
+module.exports = {registro, remover, getAll};

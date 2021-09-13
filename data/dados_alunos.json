@@ -2,13 +2,13 @@
     "alunos": [
         {
             "nome": "joao",
-            "matricula": "0001",
+            "matricula": "0003",
             "turma": "2° d"
         },
         {
-            "nome": "joao",
-            "matricula": "0003",
-            "turma": "2° d"
+            "nome": "pedro",
+            "matricula": "0001",
+            "turma": "FORMADO"
         }
     ]
 }
